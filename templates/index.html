@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>News Classification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #ffb662; /* Green */
+    color: black;
+    text-align: left;
+
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default bg-4">
+  <div class="container">
+    <div class="navbar-header">
+      
+      <h2>News Category Prediction</h2>
+    </div>
+    
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8"><p>This intelligent system can able to predicts news category based on the news content.</p></div>
+    <div class="col-md-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+  <form action="{{ url_for('predict')}}"method="post">
+    <div class="form-group">
+      <label for="news">News Content.</label>
+      <textarea class="form-control"  name="news" id="news" rows="8" placeholder="Enter news content" required="required"></textarea>
+      <!-- <input type="text" class="form-control" name="news" id="news" placeholder="News content" required="required"> -->
+    </div>
+    
+    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict Category</button>
+  </form>
+  {{ prediction_text }}
+</div>
+<div class="col-md-4"></div>
+</div>
+</div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Thanks to <a href="https://www.boardinfinity.com/">Board Infinity</a></p>
+  <p class='footer-description'>Made with ❤️ by Laxmi Narayana Bachawala.</p>
+  <div class="contact" >
+    <a target="_blank" href="https://github.com/bachawalalucky"><i class="fab fa-github fa-lg contact-icon" style="color:blanchedalmond !important"></i></a>
+    <a target="_blank" href="https://www.linkedin.com/in/laxmi-narayana-bachawala/"><i class="fab fa-linkedin fa-lg contact-icon" style="color:blanchedalmond !important"></i></a>
+</div>
+   
+  
+</footer>
+
+</body>
+</html>
